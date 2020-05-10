@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+	<link href="css/styles.css" rel="stylesheet">
+
+    <title>Survey</title>
+</head>
+
+<style>
+  body {
+    border-radius: 20px;
+    background: linear-gradient(90deg, orange, white, rgb(204, 204, 255));
+    line-height: 1.8;
+  }
+
+  div{
+      width: 600px;
+        padding: 30px;
+        margin: 50px auto;
+         background: rgba(76, 175, 80, 0.3);
+  }
+
+
+</style>
+
+<body>
+    <div>
+    <header>
+        <h1 id="title">User Survey Form</h1>
+        <p id="description">Because we care about what your pet think - help us improve the platform</p>
+    </header>
+
+    <form id="survey-form">
+        <label id="name-label" for="name">Name:
+        <input placeholder="Name" id="name" type="text" required>
+        </label><br>
+        <label id="email-label" for="email">Email:
+        <input placeholder="Email" id="email" type="email" required>
+        </label><br>
+        <label id="number-label">Age (optional):
+        <input placeholder="Age" id="number"  max="100" min="10" step="1" type="number">
+        </label><br>
+        <label id="role-label">Which option best describes your pet?<br>
+        <select  id="dropdown" type="select">
+            <option value="dog">dog</option>
+            <option value="cat">cat</option>
+            <option value="fish">fish</option>
+            <option value="Prefer not to say">Prefer not to say</option>
+            <option value="not sure">I'm not sure</option>
+        </select><br>
+        <label  id="recommend-label"  for="recommend-definitely">
+            <input id="recommend-definitely" type="radio" name="recommend" value="Definitely">
+        Definitely</label><br>
+        <label  id="recommend-label"  for="recommend-maybe" >
+            <input id="recommend-maybe" type="radio" name="recommend" value="maybe">
+        maybe</label><br>
+        <label  id="recommend-label"  for="recommend-notsure">
+            <input id="recommend-notsure" type="radio" name="recommend" value="not sure">
+        not sure</label><br>
+        <p>What would you like to see improved? (Check all that apply)</p>
+        <label for="morecatfood"><input id="morecatfood" type="checkbox" name="improve" value="More cat food">More cat food </label><br>
+        <label for="moredogfood"><input id="moredogfood" type="checkbox" name="improve" value="More dog food">More dog food </label><br>
+        <label for="morepetfoodgeneral"><input id="morepetfoodgeneral" type="checkbox" name="improve" value="More pet food in general">More pet food in general </label><br>
+        <label for="lessbarking"><input id="lessbarking" type="checkbox" name="improve" value="Less barking">Less barking </label><br>
+        <label for="moremeowing"><input id="moremeowing" type="checkbox" name="improve" value="More meowing">More meowing </label><br>
+
+        <label>Any comments or suggestions?<br>
+            <textarea id="comments" rows="4" cols="50">enter any comments...</textarea><br>
+
+        <button id="submit" type="submit">Submit</button>
+    </form>
+    </div>
+</body>
+
+</html>
