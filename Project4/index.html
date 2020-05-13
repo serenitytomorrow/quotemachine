@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+
+    <title>Go Language</title>
+</head>
+
+<style>
+    #navbar{
+        width: 100%;
+        grid-area: sidebar;
+    }
+    #main-doc{
+        width: 100%;
+        grid-area: maindoc;
+    }
+
+    body{
+        display: grid;
+width: 100%;
+font-size: 1.5em;
+    }
+
+    @media (max-width: 444px) {
+        body{
+            grid-template-columns: auto;
+            grid-template-rows: auto auto;
+            grid-gap: 10px;
+            grid-template-areas:
+                "sidebar"
+                "maindoc";
+        }
+    }
+
+    @media (min-width: 445px) {
+        body{
+            grid-template-columns: 1fr auto;
+            grid-gap: 10px;
+            grid-template-areas:
+                "sidebar maindoc";
+        }
+    }
+
+    code{
+        background-color: gray;
+    }
+
+</style>
+
+<body>
+    <nav id="navbar">
+        <header>
+            <h1>Go Language - not just another language</h1><br>
+            <a class="nav-link" href="#what_is_Go">What is Go?</a><br>
+            <a class="nav-link" href="#design">Design</a><br>
+            <a class="nav-link" href="#syntax">Syntax</a><br>
+            <a class="nav-link" href="#types">Types</a><br>
+            <a class="nav-link" href="#package_system">Package system</a>
+        </header>
+    </nav>
+
+    <main id="main-doc">
+        <section class="main-section" id="what_is_Go">
+            <h2>What is Go?</h2>
+            <p> Go is a statically typed, compiled programming language. It  is syntactically similar to C, but with memory safety, garbage collection, structural typing, and CSP-style concurrency.</p>
+            <p>There are two major implementations: </p>
+            <code></code>
+            <ul><li>Google's self-hosting[17] compiler toolchain targeting multiple operating systems, mobile devices,[18] and WebAssembly.[19]</li><li>gccgo, a GCC frontend.[20][21]</li></ul>
+        </section>
+        <section class="main-section" id="design">
+            <h2>Design</h2>
+            <p>Go is influenced by C, but with an emphasis on greater simplicity and safety. The language consists of:</p>
+            <ul><li>A syntax and environment adopting patterns more common in dynamic languages:</li>
+                <ul><li>Optional concise variable declaration and initialization through type inference (<code>x := 0</code> instead of <code>int x = 0;</code> or <code>var x = 0;</code>).</li>
+                    <li>Fast compilation.</li>
+                <li>Remote package management (go get)[48] and online package documentation.</li></ul></ul>
+
+        </section>
+        <section class="main-section" id="syntax">
+            <h2>Syntax</h2>
+            <p>Go's syntax includes changes from C aimed at keeping code concise and readable. A combined declaration/initialization operator was introduced that allows the programmer to write i := 3 or s := "Hello, world!", without specifying the types of variables used. This contrasts with C's int i = 3; and const char *s = "Hello, world!";. Semicolons still terminate statements,[a] but are implicit when the end of a line occurs.[b] Methods may return multiple values, and returning a result, err pair is the conventional way a method indicates an error to its caller in Go.[c] Go adds literal syntaxes for initializing struct parameters by name and for initializing maps and slices. As an alternative to C's three-statement for loop, Go's range expressions allow concise iteration over arrays, slices, strings, maps, and channels.</p>
+
+        </section>
+        <section class="main-section" id="types">
+            <h2>Types</h2>
+            <p>Go has a number of built-in types, including numeric ones (byte, int64, float32, etc.), booleans, and character strings (string). Strings are immutable; built-in operators and keywords (rather than functions) provide concatenation, comparison, and UTF-8 encoding/decoding.[53] Record types can be defined with the struct keyword.</p>
+            <p>For each type T and each non-negative integer constant n, there is an array type denoted [n]T; arrays of differing lengths are thus of different types. Dynamic arrays are available as "slices", denoted []T for some type T. These have a length and a capacity specifying when new memory needs to be allocated to expand the array. Several slices may share their underlying memory.</p>
+            <p>Pointers are available for all types, and the pointer-to-T type is denoted *T. Address-taking and indirection use the & and * operators, as in C, or happen implicitly through the method call or attribute access syntax.[58] There is no pointer arithmetic,[d] except via the special unsafe.Pointer type in the standard library.</p>
+            <p>For a pair of types K, V, the type map[K]V is the type of hash tables mapping type-K keys to type-V values. Hash tables are built into the language, with special syntax and built-in functions. chan T is a channel that allows sending values of type T between concurrent Go processes.</p>
+            <code>// ZeroBroadcast reports whether addr is 255.255.255.255.<br>
+func (addr ipv4addr) ZeroBroadcast() bool {<br>
+    return addr == 0xFFFFFFFF<br>
+}</code>
+
+        </section>
+        <section class="main-section" id="package_system">
+            <h2>Package system</h2>
+            <p>In Go's package system, each package has a path (e.g., "compress/bzip2" or "golang.org/x/net/html") and a name (e.g., bzip2 or html). References to other packages' definitions must always be prefixed with the other package's name, and only the capitalized names from other packages are accessible: io.Reader is public but bzip2.reader is not.[75] The go get command can retrieve packages stored in a remote repository [76] and developers are encouraged to develop packages inside a base path corresponding to a source repository (such as example.com/user_name/package_name) to reduce the likelihood of name collision with future additions to the standard library or other external libraries.</p>
+            <p>Proposals exist to introduce a proper package management solution for Go similar to CPAN for Perl or Rust's cargo system or Node's npm system.</p>
+
+        </section>
+    </main>
+</body>
+
+</html>
